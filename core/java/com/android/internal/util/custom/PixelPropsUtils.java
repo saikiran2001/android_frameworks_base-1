@@ -45,7 +45,8 @@ public class PixelPropsUtils {
             "com.google.android.apps.wallpaper",
             "com.google.android.apps.privacy.wildlife",
             "com.google.android.apps.subscriptions.red",
-            "com.google.android.inputmethod.latin"
+            "com.google.android.inputmethod.latin",
+            "com.netflix.mediaclient"
     };
 
     private static final String[] packagesToChangePixelXL = {
@@ -57,8 +58,7 @@ public class PixelPropsUtils {
             "com.android.vending",
             "com.breel.wallpapers20",
             "com.microsoft.android.smsorganizer",
-            "com.nothing.smartcenter",
-            "com.netflix.mediaclient"
+            "com.nothing.smartcenter"
     };
 
     private static final String[] packagesToKeep = {
