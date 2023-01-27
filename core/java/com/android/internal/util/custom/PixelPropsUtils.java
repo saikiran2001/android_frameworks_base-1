@@ -19,7 +19,6 @@ package com.android.internal.util.custom;
 
 import android.app.Application;
 import android.os.Build;
-import android.os.SystemProperties;
 import android.util.Log;
 
 import java.lang.reflect.Field;
@@ -34,7 +33,6 @@ public class PixelPropsUtils {
     private static final String TAG = PixelPropsUtils.class.getSimpleName();
     private static final boolean DEBUG = false;
 
-    public static final String PACKAGE_NETFLIX = "com.netflix.mediaclient";
     private static final String SAMSUNG = "com.samsung.android.";
 
     private static final Map<String, Object> propsToChange;
@@ -60,7 +58,7 @@ public class PixelPropsUtils {
             "com.breel.wallpapers20",
             "com.microsoft.android.smsorganizer",
             "com.nothing.smartcenter",
-            PACKAGE_NETFLIX
+            "com.netflix.mediaclient"
     };
 
     private static final String[] packagesToKeep = {
@@ -121,11 +119,6 @@ public class PixelPropsUtils {
             return;
         }
         if (Arrays.asList(packagesToKeep).contains(packageName)) {
-            return;
-        }
-        if (packageName.equals(PACKAGE_NETFLIX) && !SystemProperties.getBoolean(
-                "persist.pixelpropsutils.spoof_netflix", false)) {
-            if (DEBUG) Log.d(TAG, "Netflix spoofing disabled by system prop");
             return;
         }
         if (packageName.startsWith("com.google.")
